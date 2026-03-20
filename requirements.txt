@@ -1,0 +1,13 @@
+pydantic
+requests
+tqdm
+loguru
+python-dotenv
+PyPDF
+langchain
+langchain-community
+langchain-core
+langchain-groq
+python-multipart
+fastapi
+uvicorn
