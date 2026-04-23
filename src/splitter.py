@@ -33,9 +33,9 @@ for url in URLS:
 medical_data=pdf_docs + url_docs
 print(f"Loaded {len(medical_data)} documents from PDFs and URLs combined.")
 
-splitter=RecursiveCharacterTextSplitter(
-    chunk_size=500,
-    chunk_overlap=50
-)
-split_docs=splitter.split_documents(medical_data)
-print(f"Split into {len(split_docs)} chunks of text.")
+def split_documents(docs:list) -> list:
+    splitter=RecursiveCharacterTextSplitter(
+        chunk_size=500,
+        chunk_overlap=50
+    )
+    return splitter.split_documents(docs)

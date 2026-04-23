@@ -108,3 +108,4 @@ def load_urls(urls: list[str], max_workers: int = MAX_URL_WORKERS) -> list[Docum
             except Exception as exc:
                 log.error("Unexpected error for %s: %s", url, exc)
     return documents
+
