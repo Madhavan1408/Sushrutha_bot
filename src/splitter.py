@@ -1,5 +1,5 @@
 from loader import load_folder, load_urls
-
+from langchain_text_splitters import RecursiveCharacterTextSplitter
 URLS = [
         "https://medlineplus.gov/aorticaneurysm.html",
         "https://www.nhlbi.nih.gov/health/aortic-aneurysm/symptoms",
@@ -32,3 +32,10 @@ for url in URLS:
     url_docs.extend(docs)
 medical_data=pdf_docs + url_docs
 print(f"Loaded {len(medical_data)} documents from PDFs and URLs combined.")
+
+splitter=RecursiveCharacterTextSplitter(
+    chunk_size=500,
+    chunk_overlap=50
+)
+split_docs=splitter.split_documents(medical_data)
+print(f"Split into {len(split_docs)} chunks of text.")
